@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Suitepad Menu UI Webview Application - HTML for WebView</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>type</th>
+        <th>name</th>
+        <th>price</th>
+    </tr>
+    </thead>
+    <tbody id="target">
+    </tbody>
+</table>
+
+<script>
+    var target = document.getElementById('target');
+    fetch('http://192.168.0.100:8769/', {
+      method: 'get'
+    })
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(jsonResponse) {
+      jsonResponse.forEach(function(item) {
+        var row = document.createElement('tr');
+        ['type', 'name', 'price'].forEach(function(field) {
+          let column = document.createElement('td');
+          let columnText = document.createTextNode(item[field]);
+          column.appendChild(columnText);
+          row.appendChild(column);
+        });
+        target.appendChild(row);
+      });
+    });
+  </script>
+</body>
+</html>

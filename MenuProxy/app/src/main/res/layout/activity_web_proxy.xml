@@ -6,18 +6,24 @@
     android:weightSum="1">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Show Menu"
-        android:onClick="fetchData"/>
+        android:text="start"
+        android:onClick="start"/>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="stop"
+        android:onClick="start"/>
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.93"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="NoText" />
+        android:text="No Msg" />
 </LinearLayout>
